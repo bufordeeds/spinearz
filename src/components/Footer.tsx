@@ -58,6 +58,10 @@ export default function Footer() {
         <div className="mt-8 pt-8 border-t border-gray-200 text-center">
           <p className="text-gray-500 text-sm">
             © {new Date().getFullYear()} SpinEarz. All rights reserved.
+            {' · '}
+            <Link href="/studio" className="hover:text-teal-600">
+              Admin
+            </Link>
           </p>
         </div>
       </div>
