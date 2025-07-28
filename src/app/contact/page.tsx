@@ -40,7 +40,7 @@ function ContactForm() {
     return (
       <div className="py-12 bg-gray-50 min-h-screen">
         <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-white rounded-lg shadow-sm p-8 text-center">
+          <div className="bg-background rounded-lg shadow-sm p-8 text-center">
             <div className="mb-4">
               <svg className="w-16 h-16 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -55,7 +55,7 @@ function ContactForm() {
                 setSubmitted(false)
                 setFormData({ name: '', email: '', product: '', message: '' })
               }}
-              className="text-teal-600 hover:text-teal-700 font-medium"
+              className="text-primary hover:text-primary-dark font-medium"
             >
               Send another message
             </button>
@@ -76,7 +76,7 @@ function ContactForm() {
               Have a question about our products? Looking for a custom order? We&apos;d love to hear from you!
             </p>
             
-            <form onSubmit={handleSubmit} className="bg-white rounded-lg shadow-sm p-6">
+            <form onSubmit={handleSubmit} className="bg-background rounded-lg shadow-sm p-6">
               <div className="space-y-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
@@ -89,7 +89,7 @@ function ContactForm() {
                     required
                     value={formData.name}
                     onChange={handleChange}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+                    className="form-input w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
                   />
                 </div>
 
@@ -104,7 +104,7 @@ function ContactForm() {
                     required
                     value={formData.email}
                     onChange={handleChange}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+                    className="form-input w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
                   />
                 </div>
 
@@ -119,7 +119,7 @@ function ContactForm() {
                     value={formData.product}
                     onChange={handleChange}
                     placeholder="e.g., Spinner Spectaculars"
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+                    className="form-input w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
                   />
                 </div>
 
@@ -134,14 +134,14 @@ function ContactForm() {
                     rows={5}
                     value={formData.message}
                     onChange={handleChange}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+                    className="form-input w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
                   />
                 </div>
 
                 <button
                   type="submit"
                   disabled={submitting}
-                  className="w-full bg-teal-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-teal-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary-dark transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {submitting ? 'Sending...' : 'Send Message'}
                 </button>
@@ -151,12 +151,12 @@ function ContactForm() {
 
           {/* Contact Information */}
           <div>
-            <div className="bg-white rounded-lg shadow-sm p-8 mb-8">
+            <div className="bg-background rounded-lg shadow-sm p-8 mb-8">
               <h2 className="text-2xl font-bold text-gray-900 mb-6">Contact Information</h2>
               
               <div className="space-y-4">
                 <div className="flex items-start">
-                  <svg className="w-6 h-6 text-teal-600 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-6 h-6 text-primary mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
                   <div className="ml-4">
@@ -166,7 +166,7 @@ function ContactForm() {
                 </div>
 
                 <div className="flex items-start">
-                  <svg className="w-6 h-6 text-teal-600 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-6 h-6 text-primary mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                   </svg>
                   <div className="ml-4">
@@ -176,7 +176,7 @@ function ContactForm() {
                 </div>
 
                 <div className="flex items-start">
-                  <svg className="w-6 h-6 text-teal-600 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-6 h-6 text-primary mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                   <div className="ml-4">
@@ -195,15 +195,15 @@ function ContactForm() {
               </p>
               <ul className="space-y-2 text-gray-700">
                 <li className="flex items-start">
-                  <span className="text-teal-600 mr-2">•</span>
+                  <span className="text-primary mr-2">•</span>
                   Send us photos of your lure
                 </li>
                 <li className="flex items-start">
-                  <span className="text-teal-600 mr-2">•</span>
+                  <span className="text-primary mr-2">•</span>
                   We&apos;ll provide a quote within 48 hours
                 </li>
                 <li className="flex items-start">
-                  <span className="text-teal-600 mr-2">•</span>
+                  <span className="text-primary mr-2">•</span>
                   Typical turnaround: 2-3 weeks
                 </li>
               </ul>
