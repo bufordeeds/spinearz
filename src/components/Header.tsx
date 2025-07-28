@@ -6,7 +6,7 @@ export default function Header() {
     <header className="bg-white shadow-sm border-b border-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          <Link href="/" className="flex items-center space-x-2">
+          <Link href="/" className="flex items-center space-x-3">
             <Image 
               src="/spinearz-logo.jpeg" 
               alt="SpinEarz - Hook the Look" 
@@ -15,6 +15,7 @@ export default function Header() {
               className="h-12 w-auto"
               priority
             />
+            <span className="text-2xl font-bold text-gray-900">SpinEarz</span>
           </Link>
           
           <nav className="hidden md:flex space-x-8">
