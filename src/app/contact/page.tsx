@@ -1,9 +1,9 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, Suspense } from 'react'
 import { useSearchParams } from 'next/navigation'
 
-export default function ContactPage() {
+function ContactForm() {
   const searchParams = useSearchParams()
   const productInterest = searchParams.get('product')
   
@@ -212,5 +212,13 @@ export default function ContactPage() {
         </div>
       </div>
     </div>
+  )
+}
+
+export default function ContactPage() {
+  return (
+    <Suspense fallback={<div className="py-12 bg-gray-50 min-h-screen flex items-center justify-center">Loading...</div>}>
+      <ContactForm />
+    </Suspense>
   )
 }

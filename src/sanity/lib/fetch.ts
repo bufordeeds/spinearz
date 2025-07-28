@@ -8,6 +8,7 @@ import {
   CATEGORY_BY_SLUG_QUERY,
   SITE_SETTINGS_QUERY
 } from './queries'
+import { PortableTextBlock } from '@portabletext/types'
 
 export interface Product {
   _id: string
@@ -37,7 +38,7 @@ export interface SiteSettings {
   tagline: string
   contactEmail?: string
   phone?: string
-  aboutText?: unknown[]
+  aboutText?: PortableTextBlock[]
   careInstructions?: string
   socialMedia?: {
     instagram?: string

@@ -15,6 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://spinearz.com'),
   title: "SpinEarz - Hook the Look | Unique Fishing Lure Earrings",
   description: "Unique jewelry crafted from authentic fishing lures. Each SpinEarz piece transforms vintage fishing lures into wearable art.",
   keywords: "fishing lure earrings, unique jewelry, upcycled jewelry, fishing gifts, handmade earrings",
