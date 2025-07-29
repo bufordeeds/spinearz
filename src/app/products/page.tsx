@@ -68,8 +68,8 @@ export default function ProductsPage() {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-teal-600 mx-auto"></div>
-          <p className="mt-4 text-gray-600">Loading products...</p>
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary mx-auto"></div>
+          <p className="mt-4 text-foreground/60">Loading products...</p>
         </div>
       </div>
     )
@@ -78,14 +78,14 @@ export default function ProductsPage() {
   return (
     <div className="py-12 bg-gray-50 min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 className="text-4xl font-bold text-gray-900 mb-8">Our Collection</h1>
+        <h1 className="text-4xl font-bold text-foreground mb-8">Our Collection</h1>
         
         {/* Filters and Search */}
-        <div className="bg-white p-6 rounded-lg shadow-sm mb-8">
+        <div className="bg-background p-6 rounded-lg shadow-sm mb-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {/* Search */}
             <div>
-              <label htmlFor="search" className="block text-sm font-medium text-gray-700 mb-2">
+              <label htmlFor="search" className="block text-sm font-medium text-foreground mb-2">
                 Search Products
               </label>
               <input
@@ -94,20 +94,20 @@ export default function ProductsPage() {
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Search by name..."
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+                className="form-input w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
               />
             </div>
 
             {/* Category Filter */}
             <div>
-              <label htmlFor="category" className="block text-sm font-medium text-gray-700 mb-2">
+              <label htmlFor="category" className="block text-sm font-medium text-foreground mb-2">
                 Category
               </label>
               <select
                 id="category"
                 value={selectedCategory}
                 onChange={(e) => setSelectedCategory(e.target.value)}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+                className="form-input w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
               >
                 <option value="all">All Categories</option>
                 {categories.map((category) => (
@@ -120,14 +120,14 @@ export default function ProductsPage() {
 
             {/* Sort */}
             <div>
-              <label htmlFor="sort" className="block text-sm font-medium text-gray-700 mb-2">
+              <label htmlFor="sort" className="block text-sm font-medium text-foreground mb-2">
                 Sort By
               </label>
               <select
                 id="sort"
                 value={sortBy}
                 onChange={(e) => setSortBy(e.target.value as 'name' | 'price')}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+                className="form-input w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
               >
                 <option value="name">Name (A-Z)</option>
                 <option value="price">Price (Low to High)</option>
@@ -137,7 +137,7 @@ export default function ProductsPage() {
         </div>
 
         {/* Results count */}
-        <p className="text-gray-600 mb-6">
+        <p className="text-foreground/60 mb-6">
           Showing {filteredAndSortedProducts.length} of {products.length} products
         </p>
 
@@ -150,13 +150,13 @@ export default function ProductsPage() {
           </div>
         ) : (
           <div className="text-center py-12">
-            <p className="text-gray-500 text-lg">No products found matching your criteria.</p>
+            <p className="text-foreground/50 text-lg">No products found matching your criteria.</p>
             <button
               onClick={() => {
                 setSelectedCategory('all')
                 setSearchQuery('')
               }}
-              className="mt-4 text-teal-600 hover:text-teal-700 font-medium"
+              className="mt-4 text-primary hover:text-primary-dark font-medium"
             >
               Clear filters
             </button>

@@ -23,28 +23,28 @@ export default async function ProductDetailPage({
   }
 
   return (
-    <div className="py-12 bg-white min-h-screen">
+    <div className="py-12 bg-background min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Breadcrumb */}
         <nav className="flex mb-8" aria-label="Breadcrumb">
           <ol className="flex items-center space-x-2">
             <li>
-              <Link href="/" className="text-gray-500 hover:text-gray-700">
+              <Link href="/" className="text-foreground/60 hover:text-foreground/80">
                 Home
               </Link>
             </li>
             <li>
-              <span className="mx-2 text-gray-400">/</span>
+              <span className="mx-2 text-foreground/40">/</span>
             </li>
             <li>
-              <Link href="/products" className="text-gray-500 hover:text-gray-700">
+              <Link href="/products" className="text-foreground/60 hover:text-foreground/80">
                 Products
               </Link>
             </li>
             <li>
-              <span className="mx-2 text-gray-400">/</span>
+              <span className="mx-2 text-foreground/40">/</span>
             </li>
-            <li className="text-gray-900">{product.name}</li>
+            <li className="text-foreground">{product.name}</li>
           </ol>
         </nav>
 
@@ -82,16 +82,16 @@ export default async function ProductDetailPage({
               </div>
             ) : (
               <div className="h-96 lg:h-[500px] bg-gray-100 rounded-lg flex items-center justify-center">
-                <p className="text-gray-400">No image available</p>
+                <p className="text-foreground/40">No image available</p>
               </div>
             )}
           </div>
 
           {/* Product Details */}
           <div>
-            <h1 className="text-3xl font-bold text-gray-900 mb-4">{product.name}</h1>
+            <h1 className="text-3xl font-bold text-foreground mb-4">{product.name}</h1>
             
-            <p className="text-3xl font-bold text-teal-600 mb-6">
+            <p className="text-3xl font-bold text-primary mb-6">
               ${product.price.toFixed(2)}
             </p>
 
@@ -102,33 +102,33 @@ export default async function ProductDetailPage({
             )}
 
             <div className="prose prose-gray max-w-none mb-8">
-              <p>{product.description}</p>
+              <p className="text-foreground/80">{product.description}</p>
             </div>
 
             {/* Product Details */}
             <div className="border-t border-gray-200 pt-6 space-y-4">
               {product.originalLure && (
                 <div>
-                  <h3 className="text-sm font-medium text-gray-900">Original Lure</h3>
-                  <p className="mt-1 text-sm text-gray-600">{product.originalLure}</p>
+                  <h3 className="text-sm font-medium text-foreground">Original Lure</h3>
+                  <p className="mt-1 text-sm text-foreground/60">{product.originalLure}</p>
                 </div>
               )}
 
               {product.weight && (
                 <div>
-                  <h3 className="text-sm font-medium text-gray-900">Weight Category</h3>
-                  <p className="mt-1 text-sm text-gray-600 capitalize">{product.weight}</p>
+                  <h3 className="text-sm font-medium text-foreground">Weight Category</h3>
+                  <p className="mt-1 text-sm text-foreground/60 capitalize">{product.weight}</p>
                 </div>
               )}
 
               {product.colors && product.colors.length > 0 && (
                 <div>
-                  <h3 className="text-sm font-medium text-gray-900">Available Colors</h3>
+                  <h3 className="text-sm font-medium text-foreground">Available Colors</h3>
                   <div className="mt-2 flex flex-wrap gap-2">
                     {product.colors.map((color, index) => (
                       <span
                         key={index}
-                        className="px-3 py-1 text-sm bg-gray-100 text-gray-700 rounded-full"
+                        className="px-3 py-1 text-sm bg-gray-100 text-foreground/70 rounded-full"
                       >
                         {color}
                       </span>
@@ -139,23 +139,23 @@ export default async function ProductDetailPage({
 
               {product.category && typeof product.category === 'object' && (
                 <div>
-                  <h3 className="text-sm font-medium text-gray-900">Category</h3>
-                  <p className="mt-1 text-sm text-gray-600">{product.category.name}</p>
+                  <h3 className="text-sm font-medium text-foreground">Category</h3>
+                  <p className="mt-1 text-sm text-foreground/60">{product.category.name}</p>
                 </div>
               )}
             </div>
 
             {/* Contact Form */}
             <div className="mt-8 bg-gray-50 p-6 rounded-lg">
-              <h3 className="text-lg font-semibold text-gray-900 mb-4">
+              <h3 className="text-lg font-semibold text-foreground mb-4">
                 Interested in this piece?
               </h3>
-              <p className="text-gray-600 mb-4">
+              <p className="text-foreground/60 mb-4">
                 Contact us to purchase or ask questions about this product.
               </p>
               <Link
                 href={`/contact?product=${encodeURIComponent(product.name)}`}
-                className="inline-block bg-teal-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-teal-700 transition-colors"
+                className="inline-block bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary-dark transition-colors"
               >
                 Contact Us About This Product
               </Link>

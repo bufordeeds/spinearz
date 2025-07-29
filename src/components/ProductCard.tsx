@@ -9,7 +9,7 @@ interface ProductCardProps {
 export default function ProductCard({ product }: ProductCardProps) {
   return (
     <Link href={`/products/${product.slug.current}`} className="group">
-      <div className="bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200 overflow-hidden">
+      <div className="bg-background rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200 overflow-hidden">
         <div className="relative h-64 bg-gray-100">
           {product.imageUrl ? (
             <Image
@@ -27,14 +27,14 @@ export default function ProductCard({ product }: ProductCardProps) {
           )}
         </div>
         <div className="p-4">
-          <h3 className="text-lg font-semibold text-gray-900 group-hover:text-teal-600 transition-colors">
+          <h3 className="text-lg font-semibold text-foreground group-hover:text-primary transition-colors">
             {product.name}
           </h3>
-          <p className="text-xl font-bold text-teal-600 mt-2">
+          <p className="text-xl font-bold text-primary mt-2">
             ${product.price.toFixed(2)}
           </p>
           {typeof product.category === 'string' && (
-            <p className="text-sm text-gray-500 mt-1">{product.category}</p>
+            <p className="text-sm text-foreground/60 mt-1">{product.category}</p>
           )}
         </div>
       </div>
